@@ -1,0 +1,2 @@
+CLEANUP = 35
+OPENUP = 60
