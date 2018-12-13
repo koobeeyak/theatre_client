@@ -1,3 +1,6 @@
+class FilmValidationException(Exception):
+    pass
+
 class Film(object):
     def __init__(self, movie_title, release_year, mpaa_rating, run_time):
         """
@@ -11,6 +14,12 @@ class Film(object):
         self.release_year = release_year
         self.mpaa_rating = mpaa_rating
         self.run_time = run_time
+        self._validate()
+
+    def _validate(self):
+        if self.minutes == 0:
+            raise FilmValidationException("Minutes equal 0")
+
 
     @property
     def minutes(self):
