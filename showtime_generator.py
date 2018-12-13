@@ -10,12 +10,13 @@ from datetime import timedelta
 def subtract_minutes(date, minutes):
     return date - timedelta(minutes=minutes)
 
+
 def add_minutes(date, minutes):
     return date + timedelta(minutes=minutes)
 
 
 def theatre_is_still_serviceable(theatre_open_time, showtime_start_time):
-    theatre_open_time = subtract_minutes(theatre_open_time, OPENUP)
+    theatre_open_time = add_minutes(theatre_open_time, OPENUP)
     return theatre_open_time < showtime_start_time
 
 
